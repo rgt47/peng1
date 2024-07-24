@@ -1,0 +1,29 @@
+\usepackage{caption, pgfpages, titling, fancyhdr , currfile}
+
+\usepackage[export]{adjustbox}
+\usepackage{transparent, subfigure, rotating,  graphicx, titling,
+        geometry, booktabs, placeins, longtable, fancyhdr, currfile, wrapfig,
+        verbatim, fancyvrb, colortbl, multicol, soul, url, caption, float,
+        lipsum, xargs, etoolbox, sidenotes, float, import, xifthen,  hyperref,
+        amssymb, amsmath, datenumber, booktabs, array, multirow, wrapfig, float,
+pdflscape, tabu, alltt, threeparttable, threeparttablex, makecell, stfloats }
+
+\graphicspath{{figures/}{/Users/zenn/shr/images/}}
+
+
+\usepackage[normalem]{ulem}
+\pagestyle{fancy}
+\pretitle{
+\begin{flushright}
+\includegraphics[width=3cm,valign=c]{sudoku_apple.pdf}\\
+\end{flushright}
+\begin{flushleft} \LARGE }
+\posttitle{\par\end{flushleft}
+\vskip 0.5em}
+\predate{\begin{flushleft}\large}
+	\postdate{\par\end{flushleft}}
+	\preauthor{\begin{flushleft}\large}
+	\postauthor{\par\end{flushleft}}
+\fancyfoot[L]{\currfilename} %put date in header
+\fancyfoot[R]{\includegraphics[width=.8cm]{sudoku_apple.pdf}}
+\fancyhead[L]{\today} %put current file in footer
