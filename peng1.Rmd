@@ -1,0 +1,55 @@
+---
+title: "\\includegraphics[width=2cm, right]{sudoku_apple.pdf}\\newline 
+  New Penguin plot"
+author: "R.G. Thomas"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+fontsize: 11pt
+geometry: "left=3cm,right=5cm,top=2cm,bottom=2cm"
+output:
+  pdf_document:
+    keep_tex: true 
+    includes:
+header-includes:
+   - \usepackage{lipsum}
+   - \usepackage[export]{adjustbox}
+   - \usepackage{currfile}
+   - \usepackage{fancyhdr}
+   - \pagestyle{fancy}
+   - \setlength{\headheight}{14pt}
+   - \fancyfoot[L]{\currfilename} %put date in header
+   - \fancyfoot[R]{\includegraphics[width=.8cm]{sudoku_apple.pdf}}
+   - \fancyhead[L]{\today} %put current file in footer
+   - \fancyhead[R]{Penguins RGT Lab report}
+latex_engine: xelatex
+---
+
+```{r  echo=F}
+# clear env: objects and packages
+library(pacman)
+p_load(palmerpenguins, rmarkdown,  knitr )
+
+opts_chunk$set(
+  warning = FALSE, message = FALSE, echo = FALSE, fig.width = 5.2,
+  fig.height = 3, results = "asis", dev = "pdf"
+)
+```
+
+# Introduction
+
+\lipsum[1-5]
+
+Draft report examining Penguin characteristics. Data from Alison Horst article
+in the `R journal` 
+@m.horstPalmerArchipelagoPenguins2022
+
+```{r }
+attach(penguins)    
+plot(flipper_length_mm, bill_length_mm, col=sex)
+legend("topleft", legend=levels(sex), pch=16, col=unique(sex))
+```
+
+\lipsum[1-5]
+\bibliography{penguins.bib}
+\bibliographystyle{plain}
+\nocite{*}
+
