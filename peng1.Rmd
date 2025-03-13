@@ -36,7 +36,7 @@ opts_chunk$set(
 
 # Introduction
 
-\lipsum[1-5]
+\lipsum[1-2]
 
 Draft report examining Penguin characteristics. Data from Alison Horst article
 in the `R journal` 
